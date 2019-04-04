@@ -14,7 +14,12 @@ git commit -m "message" commits all staged files
 Continuing Work
 
 git clone url
+
 or 
+
 git pull
+
 then
+
 git checkout branchname
+
