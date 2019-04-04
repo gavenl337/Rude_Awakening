@@ -11,6 +11,9 @@ git add . adds all changed files to the ready-to-commit stage
 
 git commit -m "message" commits all staged files
 
+git push origin branchname uploads your changes to the remote repository
+
+
 Continuing Work
 
 git clone url
