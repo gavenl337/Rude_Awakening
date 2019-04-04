@@ -23,7 +23,6 @@ public class settings extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
             }
             return false;

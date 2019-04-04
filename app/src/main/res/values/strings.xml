@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">layout_test</string>
+    <string name="app_name">Rude Awakening</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_activity_settings">settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_alarm">Alarm</string>
 </resources>
