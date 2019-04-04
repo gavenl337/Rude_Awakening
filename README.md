@@ -7,6 +7,8 @@ git checkout branchname switches to an existing branch
 
 git checkout -b branchname creates a new branch, and switches to it
 
+Time to save work
+
 git add . adds all changed files to the ready-to-commit stage 
 
 git commit -m "message" commits all staged files
