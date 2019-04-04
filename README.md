@@ -10,3 +10,11 @@ git checkout -b branchname creates a new branch, and switches to it
 git add . adds all changed files to the ready-to-commit stage 
 
 git commit -m "message" commits all staged files
+
+Continuing Work
+
+git clone url
+or 
+git pull
+then
+git checkout branchname
