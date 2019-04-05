@@ -18,13 +18,9 @@ git push origin branchname uploads your changes to the remote repository
 
 Continuing Work
 
-git clone url
+Step 1: git clone url
 
-or 
+Step 2: git pull
 
-git pull
-
-then
-
-git checkout branchname
+Step 3: git checkout branchname
 
