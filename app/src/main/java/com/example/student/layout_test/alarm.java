@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class settings extends AppCompatActivity {
+public class alarm extends AppCompatActivity {
 
     private TextView mTextMessage;
 
@@ -19,10 +19,10 @@ public class settings extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent intent = new Intent(settings.this, alarm.class);
-                    startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
+                    Intent intent = new Intent(alarm.this, settings.class);
+                    startActivity(intent);
                     return true;
             }
             return false;
@@ -32,7 +32,7 @@ public class settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_alarm);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
