@@ -9,11 +9,11 @@
     <Button
         android:id="@+id/red_wire"
         android:layout_width="152dp"
-        android:layout_height="79dp"
+        android:layout_height="80dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Red wire"
         android:alpha=".25"
+        android:text="Red wire"
         app:layout_constraintBottom_toTopOf="@+id/text_instructions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -27,7 +27,7 @@
         android:alpha=".25"
         android:text="Blue wire"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/text_instructions"
+        app:layout_constraintEnd_toStartOf="@+id/text_color_order"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
 
@@ -40,21 +40,37 @@
         android:alpha=".25"
         android:text="Green wire"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_instructions"
+        app:layout_constraintStart_toEndOf="@+id/text_color_order"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_instructions"
         android:layout_width="157dp"
-        android:layout_height="119dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:background="#858585"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/text_color_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_color_order"
+        android:layout_width="157dp"
+        android:layout_height="89dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#858585"
         android:text="@string/instructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
+
+
 </android.support.constraint.ConstraintLayout>
