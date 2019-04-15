@@ -35,59 +35,96 @@ public class bomb extends AppCompatActivity {
         isBlueWireCut = false;
         isGreenWireCut = false;
         min=1;
-        max=2;
+        max=6;
         gameCase= new Random().nextInt((max-min)+1)+min;
 
+
         switch (gameCase){
-            case 1:
-                color_order.setText("cut the blue wire\n" +
-                        "then the green\n" +
-                        "and finally the red\n");
+            case 1: // blue green red
+                color_order.setText("\t\t\t\t\t\t\t\tBlue\n" +
+                        "\t\t\t\t\t\t\t\tGreen\n" +
+                        "\t\t\t\t\t\t\t\tRed\n");
                 break;
-            case 2:
-                color_order.setText("cut the red wire\n" +
-                        "then the blue\n" +
-                        "and finally the green\n");
+            case 2: // red blue green
+                color_order.setText("\t\t\t\t\t\t\t\tRed\n" +
+                        "\t\t\t\t\t\t\t\tBlue\n" +
+                        "\t\t\t\t\t\t\t\tGreen\n");
+                break;
+            case 3: // green red blue
+                color_order.setText("\t\t\t\t\t\t\t\tGreen\n" +
+                        "\t\t\t\t\t\t\t\tRed\n" +
+                        "\t\t\t\t\t\t\t\tBlue\n");
+                break;
+            case 4: // red green blue
+                color_order.setText("\t\t\t\t\t\t\t\tRed\n" +
+                        "\t\t\t\t\t\t\t\tGreen\n" +
+                        "\t\t\t\t\t\t\t\tBlue\n");
+                break;
+            case 5: // blue red green
+                color_order.setText("\t\t\t\t\t\t\t\tBlue\n" +
+                        "\t\t\t\t\t\t\t\tRed\n" +
+                        "\t\t\t\t\t\t\t\tGreen\n");
+                break;
+            case 6: // green blue red
+                color_order.setText("\t\t\t\t\t\t\t\tGreen\n" +
+                        "\t\t\t\t\t\t\t\tBlue\n" +
+                        "\t\t\t\t\t\t\t\tRed\n");
                 break;
         }
 
 
-        // blue, green, red
-        /* idea for randomizing instructions
-        int random 1-3
-        onClick{
-        case int=1
-        case int=2
-        case int=3
-        }
-         */
+
 
         redWire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 isRedWireCut=true;
                 switch (gameCase){
-                    case 1:
-                        if(isBlueWireCut){
-                            if(isGreenWireCut){
-                                if(isRedWireCut){
-                                    color_order.setText("Winner");
-                                    Intent intent = new Intent(bomb.this, MainActivity.class);
-                                    startActivity(intent);
-                                }
-                            }else{
-                                color_order.setText("Loser");
-                                Intent intent = new Intent(bomb.this, bomb.class);
-                                startActivity(intent);
-                            }
+                    case 1: // blue green red
+                        if(isRedWireCut && isBlueWireCut && isGreenWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
                         }else{
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
                         break;
-                    case 2:
+                    case 2: // red blue green
                         if(isBlueWireCut || isGreenWireCut){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 3: // green red blue
+                        if(isBlueWireCut || isGreenWireCut == false){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 4: // red green blue
+                        if(isGreenWireCut || isBlueWireCut){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 5: // blue red green
+                        if(isGreenWireCut || isBlueWireCut == false){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 6: // green blue red
+                        if(isRedWireCut && isBlueWireCut && isGreenWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
@@ -102,15 +139,51 @@ public class bomb extends AppCompatActivity {
             public void onClick(View view) {
                 isBlueWireCut=true;
                 switch (gameCase){
-                    case 1:
+                    case 1: // blue green red
                         if(isRedWireCut || isGreenWireCut){
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
                         break;
-                    case 2:
-                        if(isGreenWireCut || !isRedWireCut){
+                    case 2: // red blue green
+                        if(isGreenWireCut || isRedWireCut == false){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 3: // green red blue
+                        if(isGreenWireCut && isRedWireCut && isBlueWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 4: // red green blue
+                        if(isGreenWireCut && isRedWireCut && isBlueWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 5: // blue red green
+                        if(isRedWireCut || isGreenWireCut){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 6: // green blue red
+                        if (isRedWireCut || isGreenWireCut == false) {
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
@@ -125,31 +198,51 @@ public class bomb extends AppCompatActivity {
             public void onClick(View view) {
                 isGreenWireCut=true;
                 switch (gameCase){
-                    case 1:
-                        if(isRedWireCut || !isBlueWireCut){
+                    case 1: // blue green red
+                        if(isRedWireCut || isBlueWireCut == false){
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
                         break;
-                    case 2:
-                        if(isRedWireCut){
-                            if(isBlueWireCut){
-                                if(isGreenWireCut){
-                                    color_order.setText("Winner");
-                                    Intent intent = new Intent(bomb.this, MainActivity.class);
-                                    startActivity(intent);
-                                }else{
-                                    color_order.setText("Loser");
-                                    Intent intent = new Intent(bomb.this, bomb.class);
-                                    startActivity(intent);
-                                }
-                            }else{
-                                color_order.setText("Loser");
-                                Intent intent = new Intent(bomb.this, bomb.class);
-                                startActivity(intent);
-                            }
+                    case 2: // red blue green
+                        if(isGreenWireCut && isBlueWireCut && isRedWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
                         }else{
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 3: // green red blue
+                        if(isRedWireCut || isBlueWireCut){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 4: // red green blue
+                        if(isRedWireCut == false || isBlueWireCut){
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 5: // blue red green
+                        if(isGreenWireCut && isBlueWireCut && isRedWireCut){
+                            color_order.setText("Winner");
+                            Intent intent = new Intent(bomb.this, MainActivity.class);
+                            startActivity(intent);
+                        }else{
+                            color_order.setText("Loser");
+                            Intent intent = new Intent(bomb.this, bomb.class);
+                            startActivity(intent);
+                        }
+                        break;
+                    case 6: // green blue red
+                        if(isBlueWireCut || isRedWireCut){
                             color_order.setText("Loser");
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);

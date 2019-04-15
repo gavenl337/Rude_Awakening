@@ -50,7 +50,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#858585"
-        android:text="TextView"
+        android:text="\t Cut the wires in order"
         app:layout_constraintBottom_toTopOf="@+id/text_color_order"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
