@@ -5,6 +5,10 @@
     <string name="title_activity_settings">Settings</string>
     <string name="welcome_message">Welcome to your</string>
     <string name="title_notifications">Notifications</string>
-    <string name="instructions"></string>
+    <string name="instructions">Instructions: </string>
     <string name="title_activity_alarm">Alarm</string>
+    <string name="about_the_app">About the App:\n
+        <n>You stupid fuck couldn't figure out how this works. \nSet your time bitch, the game goes
+    off and you follow the fucking instructions you idiot. \nYou wanna snooze? Too fucking bad. </n>
+    </string>
 </resources>
