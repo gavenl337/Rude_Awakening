@@ -17,8 +17,11 @@ public class settings extends AppCompatActivity {
     private TextView mTextMessage;
     private ToggleButton easy;
     private ToggleButton medium;
-    ToggleButton hard;
-    ToggleButton extraHard;
+    private ToggleButton hard;
+    private ToggleButton extraHard;
+    String difficultyLevel;
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -55,6 +58,8 @@ public class settings extends AppCompatActivity {
         medium.setOnCheckedChangeListener(changeChecker);
         hard.setOnCheckedChangeListener(changeChecker);
         extraHard.setOnCheckedChangeListener(changeChecker);
+
+
     }
 
     OnCheckedChangeListener changeChecker = new OnCheckedChangeListener() {
@@ -66,23 +71,30 @@ public class settings extends AppCompatActivity {
                     medium.setChecked(false);
                     hard.setChecked(false);
                     extraHard.setChecked(false);
+                    difficultyLevel = "easy";
                 }
                 if (buttonView == medium) {
                     easy.setChecked(false);
                     hard.setChecked(false);
                     extraHard.setChecked(false);
+                    difficultyLevel = "medium";
                 }
                 if (buttonView == hard) {
                     medium.setChecked(false);
                     easy.setChecked(false);
                     extraHard.setChecked(false);
+                    difficultyLevel = "hard";
                 }
                 if (buttonView == extraHard) {
                     medium.setChecked(false);
                     hard.setChecked(false);
                     easy.setChecked(false);
+                    difficultyLevel = "extra hard";
                 }
             }
+            Intent intent = new Intent(settings.this, alarm.class);
+            intent.putExtra(alarm.DIFFICULTY_KEY, difficultyLevel);
+            startActivity(intent);
         }
     };
 }

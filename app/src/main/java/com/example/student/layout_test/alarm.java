@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class alarm extends AppCompatActivity {
 
     private TextView mTextMessage;
+    public static final String DIFFICULTY_KEY = "DIFFICULTY_LEVEL";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
