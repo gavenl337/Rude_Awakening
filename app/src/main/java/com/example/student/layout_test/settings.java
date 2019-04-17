@@ -41,3 +41,74 @@ public class settings extends AppCompatActivity {
     }
 
 }
+
+/*
+ToggleButton toggle = (ToggleButton) findViewById(R.id.togglebutton);
+toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            // The toggle is enabled
+        } else {
+            // The toggle is disabled
+        }
+    }
+});
+
+
+ */
+
+/*
+ToggleButton one;
+ToggleButton two;
+ToggleButton three;
+ToggleButton four;
+
+// Called when the activity is first created.
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main);
+
+
+    one = (ToggleButton) findViewById(R.id.toggleButton1);
+    two = (ToggleButton) findViewById(R.id.toggleButton2);
+    three = (ToggleButton) findViewById(R.id.toggleButton3);
+    four = (ToggleButton) findViewById(R.id.toggleButton4);
+
+    one.setOnCheckedChangeListener(changeChecker);
+    two.setOnCheckedChangeListener(changeChecker);
+    three.setOnCheckedChangeListener(changeChecker);
+    four.setOnCheckedChangeListener(changeChecker);
+}
+
+    OnCheckedChangeListener changeChecker = new OnCheckedChangeListener() {
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            if (isChecked){
+                if (buttonView == one) {
+                    two.setChecked(false);
+                    three.setChecked(false);
+                    four.setChecked(false);
+                }
+                if (buttonView == two) {
+                    one.setChecked(false);
+                    three.setChecked(false);
+                    four.setChecked(false);
+                }
+                if (buttonView == three) {
+                    two.setChecked(false);
+                    one.setChecked(false);
+                    four.setChecked(false);
+                }
+                if (buttonView == four) {
+                    two.setChecked(false);
+                    three.setChecked(false);
+                    one.setChecked(false);
+                }
+            }
+        }
+    };
+}
+
+ */
