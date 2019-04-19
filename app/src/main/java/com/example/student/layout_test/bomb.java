@@ -41,34 +41,34 @@ public class bomb extends AppCompatActivity {
 
         switch (gameCase){
             case 1: // blue green red
-                color_order.setText("\t\t\t\t\t\t\t\tBlue\n" +
-                        "\t\t\t\t\t\t\t\tGreen\n" +
-                        "\t\t\t\t\t\t\t\tRed\n");
+                color_order.setText("Blue\n" +
+                        "Green\n" +
+                        "Red\n");
                 break;
             case 2: // red blue green
-                color_order.setText("\t\t\t\t\t\t\t\tRed\n" +
-                        "\t\t\t\t\t\t\t\tBlue\n" +
-                        "\t\t\t\t\t\t\t\tGreen\n");
+                color_order.setText("Red\n" +
+                        "Blue\n" +
+                        "Green\n");
                 break;
             case 3: // green red blue
-                color_order.setText("\t\t\t\t\t\t\t\tGreen\n" +
-                        "\t\t\t\t\t\t\t\tRed\n" +
-                        "\t\t\t\t\t\t\t\tBlue\n");
+                color_order.setText("Green\n" +
+                        "Red\n" +
+                        "Blue\n");
                 break;
             case 4: // red green blue
-                color_order.setText("\t\t\t\t\t\t\t\tRed\n" +
-                        "\t\t\t\t\t\t\t\tGreen\n" +
-                        "\t\t\t\t\t\t\t\tBlue\n");
+                color_order.setText("Red\n" +
+                        "Green\n" +
+                        "Blue\n");
                 break;
             case 5: // blue red green
-                color_order.setText("\t\t\t\t\t\t\t\tBlue\n" +
-                        "\t\t\t\t\t\t\t\tRed\n" +
-                        "\t\t\t\t\t\t\t\tGreen\n");
+                color_order.setText("Blue\n" +
+                        "Red\n" +
+                        "Green\n");
                 break;
             case 6: // green blue red
-                color_order.setText("\t\t\t\t\t\t\t\tGreen\n" +
-                        "\t\t\t\t\t\t\t\tBlue\n" +
-                        "\t\t\t\t\t\t\t\tRed\n");
+                color_order.setText("Green\n" +
+                        "Blue\n" +
+                        "Red\n");
                 break;
         }
 

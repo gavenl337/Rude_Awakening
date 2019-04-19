@@ -24,7 +24,12 @@
         <activity
             android:name=".alarm"
             android:label="@string/app_name" />
-        <activity android:name=".bomb"></activity>
+        <activity
+            android:name=".bomb"
+            android:screenOrientation="landscape" />
+        <activity android:name=".bombmedium"
+            android:screenOrientation="landscape"
+            ></activity>
     </application>
 
 </manifest>
