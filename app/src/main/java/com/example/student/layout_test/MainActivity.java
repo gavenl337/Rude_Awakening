@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         gameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(MainActivity.this, bombmedium.class);
+                Intent intent3 = new Intent(MainActivity.this, bomb.class);
                 startActivity(intent3);
             }
         });
