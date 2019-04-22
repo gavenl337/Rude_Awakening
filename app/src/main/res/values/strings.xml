@@ -14,6 +14,6 @@
     <string name="difficulty_medium_on">shit</string>
     <string name="difficulty_hard_off">fuck</string>
     <string name="difficulty_hard_on">fuck</string>
-    <string name="difficulty_extraHard_off">%#$@*!</string>
-    <string name="difficulty_extraHard_on">%#$@*!</string>
+    <string name="difficulty_extraHard_off">%#$@!</string>
+    <string name="difficulty_extraHard_on">%#$@!</string>
 </resources>

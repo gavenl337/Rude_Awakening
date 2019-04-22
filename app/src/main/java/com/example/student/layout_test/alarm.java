@@ -39,6 +39,9 @@ public class alarm extends AppCompatActivity {
 
         Intent newIntent = getIntent();
         String test = newIntent.getStringExtra(DIFFICULTY_KEY);
+        if (test == null || test.isEmpty()){
+            test = "none";
+        }
         mTextMessage.setText(test);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
