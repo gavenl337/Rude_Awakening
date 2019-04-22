@@ -31,6 +31,7 @@ public class settings extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     Intent intent = new Intent(settings.this, alarm.class);
+                    intent.putExtra(alarm.DIFFICULTY_KEY, difficultyLevel);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dashboard:
@@ -92,9 +93,11 @@ public class settings extends AppCompatActivity {
                     difficultyLevel = "extra hard";
                 }
             }
+            /*
             Intent intent = new Intent(settings.this, alarm.class);
             intent.putExtra(alarm.DIFFICULTY_KEY, difficultyLevel);
             startActivity(intent);
+            */
         }
     };
 }
