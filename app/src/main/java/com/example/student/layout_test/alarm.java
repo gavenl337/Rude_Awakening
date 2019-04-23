@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class alarm extends AppCompatActivity {
 
     private TextView mTextMessage;
+    public static final String DIFFICULTY_KEY = "DIFFICULTY_LEVEL";
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,8 +36,18 @@ public class alarm extends AppCompatActivity {
         setContentView(R.layout.activity_alarm);
 
         mTextMessage = (TextView) findViewById(R.id.message);
+
+        Intent newIntent = getIntent();
+        String test = newIntent.getStringExtra(DIFFICULTY_KEY);
+        if (test == null || test.isEmpty()){
+            test = "none";
+        }
+        mTextMessage.setText(test);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
     }
 
 }
