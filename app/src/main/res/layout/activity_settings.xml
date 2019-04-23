@@ -48,8 +48,6 @@
             android:id="@+id/difficultyEasy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             android:textOff="@string/difficulty_easy_off"
             android:textOn="@string/difficulty_easy_on"
             app:layout_constraintBaseline_toBaselineOf="@+id/difficultyMedium"
