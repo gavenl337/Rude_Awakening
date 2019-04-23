@@ -27,9 +27,11 @@
         <activity
             android:name=".bomb"
             android:screenOrientation="landscape" />
-        <activity android:name=".bombmedium"
-            android:screenOrientation="landscape"
-            ></activity>
+        <activity
+            android:name=".bombmedium"
+            android:screenOrientation="landscape" />
+        <activity android:name=".bombhard"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
