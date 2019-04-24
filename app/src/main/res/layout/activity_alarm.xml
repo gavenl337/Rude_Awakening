@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".alarm">
 
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="101dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/title_activity_alarm"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navigation" />
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
@@ -28,5 +18,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/navigation" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.student.layout_test.ui.MainFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigation"
+        tools:layout="@layout/fragment_main" />
 
 </android.support.constraint.ConstraintLayout>

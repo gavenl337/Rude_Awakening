@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.student.layout_test">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ra_launcher"
@@ -9,9 +11,14 @@
         android:roundIcon="@mipmap/ra_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+        <activity android:name=".ui.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +37,15 @@
         <activity android:name=".bombmedium"
             android:screenOrientation="landscape"
             ></activity>
+
+        <activity android:name=".ui.AddEditAlarmActivity" />
+        <activity
+            android:name=".ui.AlarmLandingPageActivity" />
+
+        <service android:name=".service.LoadAlarmsService" />
+
+        <receiver android:name=".service.LoadAlarmsReceiver" />
+        <receiver android:name=".service.AlarmReceiver" />
     </application>
 
 </manifest>
