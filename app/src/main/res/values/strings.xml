@@ -39,12 +39,23 @@
     <string name="app_name">Rude Awakening</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_activity_settings">Settings</string>
     <string name="welcome_message">Welcome to your</string>
     <string name="title_notifications">Notifications</string>
-    <string name="instructions"></string>
+    <string name="instructions">Instructions: </string>
     <string name="title_activity_alarm">Alarm</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+=======
+    <string name="title_activity_settings">Settings:</string>
+    <string name="Difficulty">Difficulty:</string>
+    <string name="difficulty_easy_off">crap</string>
+    <string name="difficulty_easy_on">crap</string>
+    <string name="difficulty_medium_off">shit</string>
+    <string name="difficulty_medium_on">shit</string>
+    <string name="difficulty_hard_off">fuck</string>
+    <string name="difficulty_hard_on">fuck</string>
+    <string name="difficulty_extraHard_off">%#$@!</string>
+    <string name="difficulty_extraHard_on">%#$@!</string>
+>>>>>>> c1ffe1f9202d6bec3f7ee2e7bbdbbd040d65d637
 </resources>

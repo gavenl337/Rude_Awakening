@@ -11,16 +11,90 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/title_activity_settings"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navigation" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/Difficulty"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ToggleButton
+            android:id="@+id/difficultyEasy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textOff="@string/difficulty_easy_off"
+            android:textOn="@string/difficulty_easy_on"
+            app:layout_constraintBaseline_toBaselineOf="@+id/difficultyMedium"
+            app:layout_constraintEnd_toStartOf="@+id/difficultyMedium"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/difficultyMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textOff="@string/difficulty_medium_off"
+            android:textOn="@string/difficulty_medium_on"
+            app:layout_constraintBaseline_toBaselineOf="@+id/difficultyHard"
+            app:layout_constraintEnd_toStartOf="@+id/difficultyHard"
+            app:layout_constraintStart_toEndOf="@+id/difficultyEasy"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ToggleButton
+            android:id="@+id/difficultyHard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textOff="@string/difficulty_hard_off"
+            android:textOn="@string/difficulty_hard_on"
+            app:layout_constraintBaseline_toBaselineOf="@+id/difficultyExtraHard"
+            app:layout_constraintEnd_toStartOf="@+id/difficultyExtraHard"
+            app:layout_constraintStart_toEndOf="@+id/difficultyMedium" />
+
+        <ToggleButton
+            android:id="@+id/difficultyExtraHard"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="8dp"
+            android:textOff="@string/difficulty_extraHard_off"
+            android:textOn="@string/difficulty_extraHard_on"
+            app:layout_constraintBaseline_toBaselineOf="@+id/difficultyHard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/difficultyHard" />
+
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,4 +102,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/navigation" />
 
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </android.support.constraint.ConstraintLayout>
