@@ -35,14 +35,11 @@ public class alarm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-
         Intent newIntent = getIntent();
         String test = newIntent.getStringExtra(DIFFICULTY_KEY);
         if (test == null || test.isEmpty()){
             test = "none";
         }
-        mTextMessage.setText(test);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
