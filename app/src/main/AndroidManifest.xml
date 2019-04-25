@@ -34,9 +34,12 @@
         <activity
             android:name=".bomb"
             android:screenOrientation="landscape" />
-        <activity android:name=".bombmedium"
-            android:screenOrientation="landscape"
-            ></activity>
+
+        <activity
+            android:name=".bombmedium"
+            android:screenOrientation="landscape" />
+        <activity android:name=".bombhard"
+            android:screenOrientation="landscape"></activity>
 
         <activity android:name=".ui.AddEditAlarmActivity" />
         <activity
@@ -46,6 +49,7 @@
 
         <receiver android:name=".service.LoadAlarmsReceiver" />
         <receiver android:name=".service.AlarmReceiver" />
+
     </application>
 
 </manifest>
