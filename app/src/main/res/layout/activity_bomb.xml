@@ -6,16 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".bomb">
 
-    <Button
-        android:id="@+id/red_wire"
-        android:layout_width="295dp"
-        android:layout_height="81dp"
+    <ImageView
+        android:id="@+id/bomb"
+        android:layout_width="216dp"
+        android:layout_height="215dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:alpha=".25"
-        android:text="Red wire"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/bomb_body" />
+
+    <ImageView
+        android:id="@+id/broken_Blue_wire_easy"
+        android:layout_width="141dp"
+        android:layout_height="211dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/text_color_order"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898"
+        app:srcCompat="@drawable/blue_broke" />
+
+    <ImageView
+        android:id="@+id/broken_Red_wire_easy"
+        android:layout_width="173dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="216dp"
         app:layout_constraintBottom_toTopOf="@+id/text_instructions"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/red_broke" />
+
+    <ImageView
+        android:id="@+id/broken_Green_wire_easy"
+        android:layout_width="114dp"
+        android:layout_height="201dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bomb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.914"
+        app:srcCompat="@drawable/green_broke" />
+
+    <Button
+        android:id="@+id/red_wire"
+        android:layout_width="214dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:alpha=".00"
+        android:text="Red wire"
+        app:layout_constraintBottom_toTopOf="@+id/bomb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -23,12 +77,11 @@
         android:layout_width="110dp"
         android:layout_height="208dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
-        android:alpha=".25"
+        android:alpha=".00"
         android:text="Blue wire"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bomb"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.908" />
 
@@ -37,47 +90,86 @@
         android:layout_width="111dp"
         android:layout_height="208dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="36dp"
         android:layout_marginTop="8dp"
-        android:alpha=".25"
+        android:alpha=".00"
         android:text="Green wire"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bomb"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.908" />
 
     <TextView
         android:id="@+id/text_instructions"
-        android:layout_width="295dp"
+        android:layout_width="150dp"
         android:layout_height="26dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="#858585"
-        android:textSize="24sp"
         android:gravity="center"
+        android:textColor="@color/icons"
         android:text="Cut the wires in order"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/text_color_order"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/bomb"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="@+id/bomb" />
 
     <TextView
         android:id="@+id/text_color_order"
-        android:layout_width="295dp"
-        android:layout_height="182dp"
+        android:layout_width="150dp"
+        android:layout_height="117dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="#858585"
         android:gravity="center"
-        android:textSize="48sp"
         android:text="@string/instructions"
+        android:textColor="@color/icons"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bomb"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toEndOf="@+id/blue_wire"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.828" />
+
+    <ImageView
+        android:id="@+id/full_Blue_wire_easy"
+        android:layout_width="69dp"
+        android:layout_height="98dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/broken_Blue_wire_easy"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672"
+        app:srcCompat="@drawable/blue_wire" />
+
+    <ImageView
+        android:id="@+id/full_Red_wire_easy"
+        android:layout_width="170dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/broken_Red_wire_easy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/red_wire" />
+
+    <ImageView
+        android:id="@+id/full_Green_wire_easy"
+        android:layout_width="115dp"
+        android:layout_height="158dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/broken_Green_wire_easy"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781"
+        app:srcCompat="@drawable/green_wire" />
 
 
 </android.support.constraint.ConstraintLayout>
