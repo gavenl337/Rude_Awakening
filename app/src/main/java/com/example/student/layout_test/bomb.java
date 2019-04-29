@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import java.util.Random;
 
@@ -21,12 +22,16 @@ public class bomb extends AppCompatActivity {
     private int gameCase;
     private int min;
     private int max;
+    private MediaPlayer mediaPlayer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bomb);
+        mediaPlayer = MediaPlayer.create(bomb.this, R.raw.easy);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
         color_order = findViewById(R.id.text_color_order);
         redWire = findViewById(R.id.red_wire);
         blueWire = findViewById(R.id.blue_wire);
@@ -83,10 +88,17 @@ public class bomb extends AppCompatActivity {
                     case 1: // blue green red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.setVolume(1, 1);
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -94,6 +106,9 @@ public class bomb extends AppCompatActivity {
                     case 2: // red blue green
                         if(isBlueWireCut || isGreenWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -101,6 +116,9 @@ public class bomb extends AppCompatActivity {
                     case 3: // green red blue
                         if(isBlueWireCut || isGreenWireCut == false){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -108,6 +126,9 @@ public class bomb extends AppCompatActivity {
                     case 4: // red green blue
                         if(isGreenWireCut || isBlueWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -115,6 +136,9 @@ public class bomb extends AppCompatActivity {
                     case 5: // blue red green
                         if(isGreenWireCut || isBlueWireCut == false){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -122,10 +146,16 @@ public class bomb extends AppCompatActivity {
                     case 6: // green blue red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -142,6 +172,9 @@ public class bomb extends AppCompatActivity {
                     case 1: // blue green red
                         if(isRedWireCut || isGreenWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -149,6 +182,9 @@ public class bomb extends AppCompatActivity {
                     case 2: // red blue green
                         if(isGreenWireCut || isRedWireCut == false){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -156,10 +192,16 @@ public class bomb extends AppCompatActivity {
                     case 3: // green red blue
                         if(isGreenWireCut && isRedWireCut && isBlueWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -167,10 +209,16 @@ public class bomb extends AppCompatActivity {
                     case 4: // red green blue
                         if(isGreenWireCut && isRedWireCut && isBlueWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -178,6 +226,9 @@ public class bomb extends AppCompatActivity {
                     case 5: // blue red green
                         if(isRedWireCut || isGreenWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -185,6 +236,9 @@ public class bomb extends AppCompatActivity {
                     case 6: // green blue red
                         if (isRedWireCut || isGreenWireCut == false) {
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -201,6 +255,9 @@ public class bomb extends AppCompatActivity {
                     case 1: // blue green red
                         if(isRedWireCut || isBlueWireCut == false){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -208,10 +265,16 @@ public class bomb extends AppCompatActivity {
                     case 2: // red blue green
                         if(isGreenWireCut && isBlueWireCut && isRedWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -219,6 +282,9 @@ public class bomb extends AppCompatActivity {
                     case 3: // green red blue
                         if(isRedWireCut || isBlueWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -226,6 +292,9 @@ public class bomb extends AppCompatActivity {
                     case 4: // red green blue
                         if(isRedWireCut == false || isBlueWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -233,10 +302,16 @@ public class bomb extends AppCompatActivity {
                     case 5: // blue red green
                         if(isGreenWireCut && isBlueWireCut && isRedWireCut){
                             color_order.setText("Winner");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, MainActivity.class);
                             startActivity(intent);
                         }else{
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
@@ -244,6 +319,9 @@ public class bomb extends AppCompatActivity {
                     case 6: // green blue red
                         if(isBlueWireCut || isRedWireCut){
                             color_order.setText("Loser");
+                            mediaPlayer.stop();
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                             Intent intent = new Intent(bomb.this, bomb.class);
                             startActivity(intent);
                         }
