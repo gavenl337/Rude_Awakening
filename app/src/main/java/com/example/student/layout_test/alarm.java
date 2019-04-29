@@ -13,23 +13,6 @@ public class alarm extends AppCompatActivity {
     private TextView mTextMessage;
     public static final String DIFFICULTY_KEY = "DIFFICULTY_LEVEL";
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    return true;
-                case R.id.navigation_dashboard:
-                    Intent intent = new Intent(alarm.this, settings.class);
-                    startActivity(intent);
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +23,6 @@ public class alarm extends AppCompatActivity {
         if (test == null || test.isEmpty()){
             test = "none";
         }
-
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
     }
 
 }

@@ -22,34 +22,12 @@ public class settings extends AppCompatActivity {
     String difficultyLevel;
 
 
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent = new Intent(settings.this, alarm.class);
-                    intent.putExtra(alarm.DIFFICULTY_KEY, difficultyLevel);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_dashboard:
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
         easy = (ToggleButton) findViewById(R.id.difficultyEasy);
         medium = (ToggleButton) findViewById(R.id.difficultyMedium);
         hard = (ToggleButton) findViewById(R.id.difficultyHard);

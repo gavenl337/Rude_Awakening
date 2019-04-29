@@ -15,25 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private Button gameButton;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent2 = new Intent(MainActivity.this, alarm.class);
-                    startActivity(intent2);
-                    return true;
-                case R.id.navigation_dashboard:
-                    Intent intent = new Intent(MainActivity.this, settings.class);
-                    startActivity(intent);
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
     }
 
 }
