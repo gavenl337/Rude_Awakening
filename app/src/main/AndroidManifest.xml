@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ra_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".bombfuck"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".bombhard"
+            android:screenOrientation="landscape"/>
         <activity android:name=".ui.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,13 +32,11 @@
         <activity
             android:name=".bomb"
             android:screenOrientation="landscape" />
-        <activity android:name=".bombmedium"
-            android:screenOrientation="landscape"
-            ></activity>
-
-        <activity android:name=".ui.AddEditAlarmActivity" />
         <activity
-            android:name=".ui.AlarmLandingPageActivity" />
+            android:name=".bombmedium"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.AddEditAlarmActivity" />
+        <activity android:name=".ui.AlarmLandingPageActivity" />
 
         <service android:name=".service.LoadAlarmsService" />
 

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.CompoundButton;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 
 public class settings extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class settings extends AppCompatActivity {
     private ToggleButton hard;
     private ToggleButton extraHard;
     String difficultyLevel;
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -33,6 +36,22 @@ public class settings extends AppCompatActivity {
         hard = (ToggleButton) findViewById(R.id.difficultyHard);
         extraHard = (ToggleButton) findViewById(R.id.difficultyExtraHard);
 
+        String buttonState = LoadButtonState();
+        if(buttonState.equals("easy")){
+            easy.setChecked(true);
+        }
+        else if (buttonState.equals("medium")){
+            medium.setChecked(true);
+        }
+        else if (buttonState.equals("hard")){
+            hard.setChecked(true);
+        }
+        else if (buttonState.equals("extra hard")){
+            extraHard.setChecked(true);
+        }
+        else{
+            easy.setChecked(true);
+        }
         easy.setOnCheckedChangeListener(changeChecker);
         medium.setOnCheckedChangeListener(changeChecker);
         hard.setOnCheckedChangeListener(changeChecker);
@@ -51,31 +70,46 @@ public class settings extends AppCompatActivity {
                     hard.setChecked(false);
                     extraHard.setChecked(false);
                     difficultyLevel = "easy";
+                    SaveButtonState("easy");
                 }
                 if (buttonView == medium) {
                     easy.setChecked(false);
                     hard.setChecked(false);
                     extraHard.setChecked(false);
                     difficultyLevel = "medium";
+                    SaveButtonState("medium");
+
                 }
                 if (buttonView == hard) {
                     medium.setChecked(false);
                     easy.setChecked(false);
                     extraHard.setChecked(false);
                     difficultyLevel = "hard";
+                    SaveButtonState("hard");
+
                 }
                 if (buttonView == extraHard) {
                     medium.setChecked(false);
                     hard.setChecked(false);
                     easy.setChecked(false);
                     difficultyLevel = "extra hard";
+                    SaveButtonState("extra hard");
+
                 }
             }
-            /*
-            Intent intent = new Intent(settings.this, alarm.class);
-            intent.putExtra(alarm.DIFFICULTY_KEY, difficultyLevel);
-            startActivity(intent);
-            */
         }
     };
+
+    public void SaveButtonState(String bState){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(settings.this);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("DIFFICULTY_LEVEL", bState);
+        edit.commit();
+    }
+
+    public String LoadButtonState(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String buttonState = preferences.getString("DIFFICULTY_LEVEL", "DEFAULT");
+        return buttonState;
+    }
 }
