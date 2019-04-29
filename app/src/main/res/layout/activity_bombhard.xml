@@ -145,7 +145,7 @@
     <Button
         android:id="@+id/red_wire_hard"
         android:layout_width="216dp"
-        android:layout_height="78dp"
+        android:layout_height="85dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:alpha=".00"
@@ -156,7 +156,7 @@
 
     <Button
         android:id="@+id/green_wire_hard"
-        android:layout_width="99dp"
+        android:layout_width="137dp"
         android:layout_height="220dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
