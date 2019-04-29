@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 import java.util.Random;
@@ -14,6 +15,9 @@ public class bombfuck extends AppCompatActivity {
     private Button redWire;
     private Button blueWire;
     private Button greenWire;
+    private ImageView redWirePic;
+    private ImageView greenWirePic;
+    private ImageView blueWirePic;
     private boolean isRedWireCut;
     private boolean isBlueWireCut;
     private boolean isGreenWireCut;
@@ -31,6 +35,9 @@ public class bombfuck extends AppCompatActivity {
         redWire = findViewById(R.id.red_wire_fuck);
         blueWire = findViewById(R.id.blue_wire_fuck);
         greenWire = findViewById(R.id.green_wire_fuck);
+        redWirePic = findViewById(R.id.red_whole_fuck);
+        greenWirePic = findViewById(R.id.green_whole_fuck);
+        blueWirePic = findViewById(R.id.blue_whole_fuck);
         isRedWireCut = false;
         isBlueWireCut = false;
         isGreenWireCut = false;
@@ -44,6 +51,7 @@ public class bombfuck extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isRedWireCut=true;
+                redWirePic.setAlpha((float) .01);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
@@ -103,6 +111,7 @@ public class bombfuck extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isBlueWireCut=true;
+                blueWirePic.setAlpha((float) .01);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut || isGreenWireCut){
@@ -162,6 +171,7 @@ public class bombfuck extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isGreenWireCut=true;
+                greenWirePic.setAlpha((float) .01);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut || isBlueWireCut == false){
