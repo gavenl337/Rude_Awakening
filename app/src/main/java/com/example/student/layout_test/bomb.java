@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -15,6 +16,9 @@ public class bomb extends AppCompatActivity {
     private Button redWire;
     private Button blueWire;
     private Button greenWire;
+    private ImageView fullRedWire;
+    private ImageView fullBlueWire;
+    private ImageView fullGreenWire;
     private boolean isRedWireCut;
     private boolean isBlueWireCut;
     private boolean isGreenWireCut;
@@ -31,6 +35,9 @@ public class bomb extends AppCompatActivity {
         redWire = findViewById(R.id.red_wire);
         blueWire = findViewById(R.id.blue_wire);
         greenWire = findViewById(R.id.green_wire);
+        fullRedWire = findViewById(R.id.full_Red_wire_easy);
+        fullBlueWire = findViewById(R.id.full_Blue_wire_easy);
+        fullGreenWire = findViewById(R.id.full_Green_wire_easy);
         isRedWireCut = false;
         isBlueWireCut = false;
         isGreenWireCut = false;
@@ -79,6 +86,7 @@ public class bomb extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isRedWireCut=true;
+                fullRedWire.setVisibility(View.INVISIBLE);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
@@ -138,6 +146,7 @@ public class bomb extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isBlueWireCut=true;
+                fullBlueWire.setVisibility(View.INVISIBLE);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut || isGreenWireCut){
@@ -197,6 +206,7 @@ public class bomb extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 isGreenWireCut=true;
+                fullGreenWire.setVisibility(View.INVISIBLE);
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut || isBlueWireCut == false){
