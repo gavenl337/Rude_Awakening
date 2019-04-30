@@ -10,14 +10,19 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.student.layout_test.MainActivity;
 import com.example.student.layout_test.R;
 import com.example.student.layout_test.adapter.AlarmsAdapter;
 import com.example.student.layout_test.model.Alarm;
 import com.example.student.layout_test.service.LoadAlarmsReceiver;
 import com.example.student.layout_test.service.LoadAlarmsService;
+import com.example.student.layout_test.settings;
 import com.example.student.layout_test.util.AlarmUtils;
 import com.example.student.layout_test.view.DividerItemDecoration;
 import com.example.student.layout_test.view.EmptyRecyclerView;
@@ -36,11 +41,26 @@ public final class MainFragment extends Fragment
         mReceiver = new LoadAlarmsReceiver(this);
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.settings_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent2 = new Intent(getActivity(), settings.class);
+        startActivity(intent2);
+        return super.onOptionsItemSelected(item);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         final View v = inflater.inflate(R.layout.fragment_main, container, false);
+
+        setHasOptionsMenu(true);
 
         final EmptyRecyclerView rv = (EmptyRecyclerView) v.findViewById(R.id.recycler);
         mAdapter = new AlarmsAdapter();

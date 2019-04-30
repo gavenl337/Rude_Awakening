@@ -58,8 +58,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.angry_clock);
-        builder.setColor(ContextCompat.getColor(context, R.color.accent));
+        builder.setSmallIcon(R.mipmap.ra_launcher);
         builder.setContentTitle(context.getString(R.string.app_name));
         builder.setContentText(alarm.getLabel());
         builder.setTicker(alarm.getLabel());
@@ -70,8 +69,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
         builder.setPriority(Notification.PRIORITY_HIGH);
 
         manager.notify(id, builder.build());
-        Intent myIntent = new Intent(context, bomb.class);
-        context.startActivity(myIntent);
+        context.startActivity(new Intent(context, bomb.class));
 
         //Reset Alarm manually
         setReminderAlarm(context, alarm);
