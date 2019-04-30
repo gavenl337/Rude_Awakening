@@ -105,9 +105,9 @@
         android:text="after"
         android:textColor="@color/icons"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/green_wire_hard"
+        app:layout_constraintHorizontal_bias="0.268"
+        app:layout_constraintStart_toEndOf="@+id/blue_wire_hard"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
