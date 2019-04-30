@@ -56,8 +56,6 @@ public class bombmedium extends AppCompatActivity {
         }
 
 
-
-
         instructions = findViewById(R.id.text_instructions_medium);
         first_color = findViewById(R.id.first_color);
         second_color = findViewById(R.id.second_color);
@@ -173,12 +171,7 @@ public class bombmedium extends AppCompatActivity {
                 switch (gameCase){
                     case 1: // blue green red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
@@ -205,12 +198,7 @@ public class bombmedium extends AppCompatActivity {
                         break;
                     case 6: // green blue red
                         if(isRedWireCut && isBlueWireCut && isGreenWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
@@ -236,24 +224,14 @@ public class bombmedium extends AppCompatActivity {
                         break;
                     case 3: // green red blue
                         if(isGreenWireCut && isRedWireCut && isBlueWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
                         break;
                     case 4: // red green blue
                         if(isGreenWireCut && isRedWireCut && isBlueWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
@@ -284,12 +262,7 @@ public class bombmedium extends AppCompatActivity {
                         break;
                     case 2: // red blue green
                         if(isGreenWireCut && isBlueWireCut && isRedWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
@@ -306,12 +279,7 @@ public class bombmedium extends AppCompatActivity {
                         break;
                     case 5: // blue red green
                         if(isGreenWireCut && isBlueWireCut && isRedWireCut){
-                            instructions.setText("Winner");
-                            mediaPlayer.stop();
-                            mediaPlayer.release();
-                            mediaPlayer = null;
-                            Intent intent = new Intent(bombmedium.this, MainActivity.class);
-                            startActivity(intent);
+                            evaluateGameCondition(true);
                         }else{
                             evaluateGameCondition(false);
                         }
