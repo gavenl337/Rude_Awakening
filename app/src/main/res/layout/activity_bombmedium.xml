@@ -4,104 +4,181 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".bombmedium">
 
-    <Button
-        android:id="@+id/red_wire_medium"
-        android:layout_width="295dp"
-        android:layout_height="81dp"
-        android:layout_marginEnd="8dp"
+    <ImageView
+        android:id="@+id/broken_green"
+        android:layout_width="132dp"
+        android:layout_height="280dp"
         android:layout_marginStart="8dp"
-        android:alpha=".25"
-        android:text="Red wire"
-        app:layout_constraintBottom_toTopOf="@+id/text_instructions_medium"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bomb_body"
+        app:layout_constraintStart_toEndOf="@+id/first_color"
+        app:layout_constraintTop_toTopOf="@+id/bomb_body"
+        app:layout_constraintVertical_bias="0.338"
+        app:srcCompat="@drawable/green_broke"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/green_whole_medium"
+        android:layout_width="132dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/broken_green"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/broken_green"
+        app:layout_constraintTop_toTopOf="@+id/broken_green"
+        app:srcCompat="@drawable/green_wire" />
+
+    <ImageView
+        android:id="@+id/bomb_body"
+        android:layout_width="343dp"
+        android:layout_height="246dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/bomb_body" />
+
+    <ImageView
+        android:id="@+id/broken_blue"
+        android:layout_width="159dp"
+        android:layout_height="301dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bomb_body"
+        app:layout_constraintEnd_toStartOf="@+id/second_color"
+        app:layout_constraintTop_toTopOf="@+id/bomb_body"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/blue_broke" />
+
+    <ImageView
+        android:id="@+id/broken_red"
+        android:layout_width="344dp"
+        android:layout_height="122dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_instructions_medium"
+        app:layout_constraintEnd_toEndOf="@+id/bomb_body"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/bomb_body"
+        app:srcCompat="@drawable/red_broke" />
 
     <Button
         android:id="@+id/blue_wire_medium"
-        android:layout_width="110dp"
-        android:layout_height="208dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
-        android:alpha=".25"
+        android:layout_width="174dp"
+        android:layout_height="192dp"
+        android:alpha=".01"
         android:text="Blue wire"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintBottom_toBottomOf="@+id/broken_blue"
+        app:layout_constraintEnd_toEndOf="@+id/broken_blue"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/broken_blue"
+        app:layout_constraintTop_toTopOf="@+id/broken_blue"
+        app:layout_constraintVertical_bias="0.477" />
+
+    <Button
+        android:id="@+id/red_wire_medium"
+        android:layout_width="169dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="8dp"
+        android:alpha=".01"
+        android:text="Red wire"
+        app:layout_constraintBottom_toBottomOf="@+id/broken_red"
+        app:layout_constraintEnd_toEndOf="@+id/broken_red"
+        app:layout_constraintStart_toStartOf="@+id/broken_red"
+        app:layout_constraintTop_toTopOf="@+id/broken_red" />
 
     <Button
         android:id="@+id/green_wire_medium"
-        android:layout_width="111dp"
-        android:layout_height="208dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginTop="8dp"
-        android:alpha=".25"
+        android:layout_width="169dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:alpha=".01"
         android:text="Green wire"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.908" />
+        app:layout_constraintBottom_toBottomOf="@+id/broken_green"
+        app:layout_constraintEnd_toEndOf="@+id/broken_green"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toEndOf="@+id/bomb_body"
+        app:layout_constraintTop_toTopOf="@+id/broken_green"
+        app:layout_constraintVertical_bias="0.421" />
 
     <TextView
         android:id="@+id/text_instructions_medium"
-        android:layout_width="295dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="196dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="#858585"
+        android:layout_width="190dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="64dp"
+        android:background="#0000"
         android:gravity="center"
-        android:text=""
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/first_color"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/first_color"
+        app:layout_constraintTop_toTopOf="@+id/bomb_body" />
 
     <TextView
         android:id="@+id/first_color"
-        android:layout_width="295dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="#858585"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
+        android:background="#0000"
         android:gravity="center"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/second_color"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/second_color"
         app:layout_constraintTop_toBottomOf="@+id/text_instructions_medium" />
 
     <TextView
         android:id="@+id/second_color"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
+        android:background="#0000"
         android:gravity="center"
-        android:background="#858585"
-        android:layout_width="295dp"
-        android:layout_height="60dp"
-        android:textSize="48sp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/third_color"
         app:layout_constraintTop_toBottomOf="@+id/first_color" />
 
     <TextView
         android:id="@+id/third_color"
+        android:layout_width="195dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="#0000"
         android:gravity="center"
-        android:background="#858585"
-        android:layout_width="295dp"
-        android:textSize="48sp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/second_color" />
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bomb_body"
+        app:layout_constraintEnd_toEndOf="@+id/bomb_body"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="@+id/bomb_body"
+        app:layout_constraintTop_toBottomOf="@+id/second_color"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/blue_whole_medium"
+        android:layout_width="76dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="71dp"
+        app:layout_constraintBottom_toBottomOf="@+id/broken_blue"
+        app:layout_constraintEnd_toEndOf="@+id/broken_blue"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/broken_blue"
+        app:layout_constraintTop_toTopOf="@+id/broken_blue"
+        app:srcCompat="@drawable/blue_wire" />
+
+    <ImageView
+        android:id="@+id/red_whole_medium"
+        android:layout_width="344dp"
+        android:layout_height="122dp"
+        app:layout_constraintEnd_toEndOf="@+id/broken_red"
+        app:layout_constraintTop_toTopOf="@+id/broken_red"
+        app:srcCompat="@drawable/red_wire" />
 
 </android.support.constraint.ConstraintLayout>
