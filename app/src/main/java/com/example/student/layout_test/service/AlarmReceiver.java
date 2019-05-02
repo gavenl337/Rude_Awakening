@@ -8,15 +8,20 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import com.example.student.layout_test.R;
+import com.example.student.layout_test.bombfuck;
+import com.example.student.layout_test.bombhard;
+import com.example.student.layout_test.bombmedium;
 import com.example.student.layout_test.model.Alarm;
 import com.example.student.layout_test.bomb;
 import com.example.student.layout_test.util.AlarmUtils;
@@ -58,8 +63,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
         createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.angry_clock);
-        builder.setColor(ContextCompat.getColor(context, R.color.accent));
+        builder.setSmallIcon(R.drawable.ic_notifications_black_24dp);
         builder.setContentTitle(context.getString(R.string.app_name));
         builder.setContentText(alarm.getLabel());
         builder.setTicker(alarm.getLabel());
@@ -69,9 +73,9 @@ public final class AlarmReceiver extends BroadcastReceiver {
         builder.setAutoCancel(true);
         builder.setPriority(Notification.PRIORITY_HIGH);
 
-        manager.notify(id, builder.build());
-        Intent myIntent = new Intent(context, bomb.class);
-        context.startActivity(myIntent);
+        String difficulty = checkDifficulty(context);
+        startGame(difficulty, context);
+//        manager.notify(id, builder.build());
 
         //Reset Alarm manually
         setReminderAlarm(context, alarm);
@@ -206,6 +210,39 @@ public final class AlarmReceiver extends BroadcastReceiver {
             channel.setVibrationPattern(new long[] {1000,500,1000,500,1000,500});
             channel.setBypassDnd(true);
             mgr.createNotificationChannel(channel);
+        }
+    }
+
+    public String checkDifficulty(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        return preferences.getString("DIFFICULTY_LEVEL", "easy");
+    }
+
+    public void startGame(String difficulty, Context context) {
+        Intent i;
+        switch(difficulty) {
+            case "easy":
+                i = new Intent(context, bomb.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+                return;
+
+            case "medium":
+                i = new Intent(context, bombmedium.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+                return;
+
+            case "hard":
+                i = new Intent(context, bombhard.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+                return;
+
+            case "extra hard":
+                i = new Intent(context, bombfuck.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
         }
     }
 
