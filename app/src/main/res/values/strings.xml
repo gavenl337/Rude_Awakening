@@ -49,8 +49,8 @@
     =======
     <string name="title_activity_settings">Settings:</string>
     <string name="Difficulty">Difficulty:</string>
-    <string name="difficulty_easy_off">crap</string>
-    <string name="difficulty_easy_on">crap</string>
+    <string name="difficulty_easy_off">damn</string>
+    <string name="difficulty_easy_on">damn</string>
     <string name="difficulty_medium_off">shit</string>
     <string name="difficulty_medium_on">shit</string>
     <string name="difficulty_hard_off">fuck</string>
