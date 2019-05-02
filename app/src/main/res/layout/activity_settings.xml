@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6F6F6F"
     tools:context=".settings">
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/title_activity_settings"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/divider"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navigation" />
@@ -26,7 +27,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:text="@string/Difficulty"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/divider"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/message" />
@@ -36,9 +37,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +49,7 @@
             android:id="@+id/difficultyEasy"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/check_left"
             android:textOff="@string/difficulty_easy_off"
             android:textOn="@string/difficulty_easy_on"
             app:layout_constraintBaseline_toBaselineOf="@+id/difficultyMedium"
@@ -59,17 +61,18 @@
             android:id="@+id/difficultyMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/check_mid"
             android:textOff="@string/difficulty_medium_off"
             android:textOn="@string/difficulty_medium_on"
             app:layout_constraintBaseline_toBaselineOf="@+id/difficultyHard"
             app:layout_constraintEnd_toStartOf="@+id/difficultyHard"
-            app:layout_constraintStart_toEndOf="@+id/difficultyEasy"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintStart_toEndOf="@+id/difficultyEasy" />
 
         <ToggleButton
             android:id="@+id/difficultyHard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/check_mid"
             android:textOff="@string/difficulty_hard_off"
             android:textOn="@string/difficulty_hard_on"
             app:layout_constraintBaseline_toBaselineOf="@+id/difficultyExtraHard"
@@ -79,8 +82,9 @@
         <ToggleButton
             android:id="@+id/difficultyExtraHard"
             android:layout_width="0dp"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:background="@drawable/check_right"
             android:textOff="@string/difficulty_extraHard_off"
             android:textOn="@string/difficulty_extraHard_on"
             app:layout_constraintBaseline_toBaselineOf="@+id/difficultyHard"
@@ -95,7 +99,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="?android:attr/windowBackground"
+        android:background="#545454"
+        app:labelVisibilityMode="auto"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
