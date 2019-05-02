@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".bombfuck">
 
     <ImageView
@@ -144,7 +145,6 @@
         app:layout_constraintEnd_toEndOf="@+id/broken_red"
         app:layout_constraintTop_toTopOf="@+id/broken_red"
         app:srcCompat="@drawable/red_wire" />
-
 
 
 
