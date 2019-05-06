@@ -62,7 +62,7 @@
             android:hint="@string/add_label_hint"
             android:inputType="textCapWords"
             android:maxLength="15"
-            android:textColor="@color/secondary_text"
+            android:textColor="#E6E6E6"
             android:textStyle="italic" />
 
         <TextView
