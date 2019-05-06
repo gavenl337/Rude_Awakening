@@ -13,12 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/title_activity_settings"
         android:textColor="@color/divider"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navigation" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -94,21 +93,52 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#545454"
-        app:labelVisibilityMode="auto"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/navigation" />
-
     <android.support.constraint.Group
         android:id="@+id/group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="307dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="serif"
+        android:text="This app was designed, written, and coded by a group of five assholes who don’t want you to sleep in. We want to make it almost impossible to ignore your alarm, and make turning it off as arduous, and confusing a task as possible. We hope that we can help to start your day off right with a heaping helping of rage."
+        android:textColor="#E6E6E6"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="303dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
+        android:text="Disclaimer: “Rude Awakening developers are not liable for damage to phones causes by high-velocity impacts, liquid-damage, or snapping over ones knee; in addition, we are not liable for holes put into walls, ceilings, doors, or windows, in an attempt to remove the phone from ones sleeping vicinity.”"
+        android:textColor="#E6E6E6"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="331dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="16dp"
+        android:text="Coming soon from Rude-Awakening’s developers: “Alarm-ingly calm: clock-smashing stress-reducer” the new way to relax and take out your frustrations on your alarm without the monetary sacrifice of smashing your phone!"
+        android:textAlignment="center"
+        android:textColor="@color/RedWords"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
 </android.support.constraint.ConstraintLayout>
